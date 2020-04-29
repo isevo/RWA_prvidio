@@ -49,8 +49,8 @@ a_rezervation=api.model('Rezervation',{'number': fields.Integer(),'id_person':fi
 
 @api.route('/rezervation')
 class Rezervation(Resource):
-    #@api.doc(security='apikey')
-   # @authenticated
+    @api.doc(security='apikey')
+    @authenticated
     def get(self):
        
         print('Number of table: ',tabels_number)
