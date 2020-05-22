@@ -6,16 +6,16 @@ d=conn.cursor()
 
 
 tabels_number=[]
-id_person_rezervations=[]
-y_n_rezervation=[]
+id_person_reservations=[]
+y_n_reservation=[]
 
-def listAllDeskRezervation():
+def listAllDeskReservation():
     c.execute("SELECT number,id_person,rezervated FROM tabels")
     for el in c.fetchall():
         tabels_number.append(el[0])
-        id_person_rezervations.append(el[1])
-        y_n_rezervation.append(el[2])
-    print(y_n_rezervation)
+        id_person_reservations.append(el[1])
+        y_n_reservation.append(el[2])
+    print(y_n_reservation)
 
 
 addNumberofTable=[]
@@ -24,7 +24,7 @@ broj_stola=[]
 id_osobe=[]
 rezervacija=[]
 #broj stola i id osobe
-def RezervateTable(number,id_person,rezervacija):
+def ReservateTable(number,id_person,rezervacija):
     
     rezervated='YES'
     if rezervacija=="NO":

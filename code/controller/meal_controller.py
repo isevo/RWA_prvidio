@@ -9,7 +9,7 @@ from model.meal import *
 
 from service.auth_service import authenticated
 from marshmallow import Schema, fields as ma_fields, post_load
-api = Namespace(name='Meals API', path='/api/meal')
+api = Namespace(name='Meals API', path='/api/')
 
 
 meals=[]
@@ -33,7 +33,7 @@ class MealSchema(Schema):
         return TheMeal(**data)
 
 #a_rezervation=api.model('Rezervation',{'number': fields.String('The number of table'),'id_person':fields.String('Person who rezervated desk'),'rezervated':fields.String('YES')})
-a_rezervation=api.model('Meal',{'name': fields.String(),'price':fields.Integer()})
+a_reservation=api.model('Meal',{'name': fields.String(),'price':fields.Integer()})
 
 
 
@@ -71,13 +71,13 @@ class Mealn(Resource):
         return schema.dump(meals)
 
 
-    @api.expect(a_rezervation)
+    @api.expect(a_reservation)
     def post(self):
       
         schema=MealSchema()
         new=schema.load(api.payload)
         print(new)
-        return {'result ':'Desk reserved'},201
+        return {'result ':'meal added'},201
 
 
 

@@ -5,11 +5,13 @@ from controller import api
 #from controller.auth_controller import projects
 from model.meal import listAll
 from model.user import listAllUsers
-from model.reservation import listAllDeskRezervation
-from model.reservation import RezervateTable
+from model.reservation import listAllDeskReservation
+from model.reservation import ReservateTable
 
 from app import app
 
+
+app.config['SWAGGER_UI_JSONEDITOR']=True
 #app = Flask(__name__)
 
 #from . import routes
@@ -31,7 +33,7 @@ listAllUsers()
 app.config.from_object('config.DevelopmentConfig')
 
 
-listAllDeskRezervation()
+listAllDeskReservation()
 
 
 
@@ -43,3 +45,7 @@ listAllDeskRezervation()
 
 # initialize rest api via flask-restplus
 api.init_app(app)
+
+
+if __name__ == '__main__':
+    app.run()
