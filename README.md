@@ -24,8 +24,7 @@ Prvo treba otici na http://127.0.0.1:5000/login . Password je password7, nakon u
 <ol>
 <li>instalacija venv-a</li>
 <li>instalacija requirementsa</li>
-<li>set FLASK_APP=myapp.py</li>
-<li>flask run</li>
+<li>python myapp.py</li>
 <li> http://127.0.0.1:5000/login i logirati se (password7),pa pokupiti token</li>
 <li>Otici na http://127.0.0.1:5000/ i pokrenuti api </li>
 </ol>
